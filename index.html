@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,27 +8,44 @@
     <title>Produtos</title>
 </head>
 
-<body class="bg-white flex flex-col items-center justify-center h-screen gap-4">
+<body class="bg-gray-100 flex flex-col items-center py-10 gap-4 min-h-screen">
     
     <h1 class="text-2xl font-bold">
-        Lista de produtos
+        Lista de Produtos
     </h1>
 
     <input 
         type="text"
-        id="produto"
-        class="border rounded px-4 py-2"
+        id="codigo"
+        placeholder="Código"
+        class="border rounded px-4 py-2 w-64"
+    >
+
+    <input 
+        type="text" 
+        id="produto" 
+        placeholder="Produto" 
+        class="border rounded px-4 py-2 w-64"
+    >
+
+    <input 
+        type="number" 
+        id="quantidade" 
+        placeholder="Quantidade" 
+        class="border rounded px-4 py-2 w-64"
     >
 
     <button 
         id="botao"
-        class="bg-blue-300 text-black py-2 px-6 rounded border border-black"
+        class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-6 rounded border border-black transition"
     >
         Adicionar
     </button>
 
-    <div id="lista"
-        class ="flex flex-col gap"
+    <div 
+        id="lista"
+        class="flex flex-col gap-2 mt-4 w-64"
+    >
     </div>
 
 </body>
