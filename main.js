@@ -7,6 +7,12 @@ botao.addEventListener('click', function () {
     const lista = document.getElementById('lista')
     const produto = document.getElementById('produto')
 
+    // 🔎 Verifica se está vazio
+    if (produto.value.trim() === '') {
+        alert('Digite um produto válido!')
+        return
+    }
+
     const span = document.createElement('p')
     span.textContent = produto.value
 
