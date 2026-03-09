@@ -1,52 +1,77 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="main.js" defer></script>
+
     <title>Produtos</title>
 </head>
 
-<body class="bg-gray-100 flex flex-col items-center py-10 gap-4 min-h-screen">
-    
-    <h1 class="text-2xl font-bold">
+<body class="bg-gray-100 dark:bg-gray-900 flex flex-col items-center py-10 gap-4 min-h-screen">
+
+    <h1 class="text-2xl font-bold text-black dark:text-white">
         Lista de Produtos
     </h1>
+
+    </button>
 
     <input 
         type="text"
         id="codigo"
         placeholder="Código"
-        class="border rounded px-4 py-2 w-64"
+        class="border rounded px-4 py-2 w-64 dark:bg-gray-800 dark:text-white"
     >
 
     <input 
-        type="text" 
-        id="produto" 
-        placeholder="Produto" 
-        class="border rounded px-4 py-2 w-64"
+        type="text"
+        id="produto"
+        placeholder="Produto"
+        class="border rounded px-4 py-2 w-64 dark:bg-gray-800 dark:text-white"
     >
 
     <input 
-        type="number" 
-        id="quantidade" 
-        placeholder="Quantidade" 
-        class="border rounded px-4 py-2 w-64"
+        type="number"
+        id="quantidade"
+        placeholder="Quantidade"
+        class="border rounded px-4 py-2 w-64 dark:bg-gray-800 dark:text-white"
     >
 
-    <button 
-        id="botao"
-        class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-6 rounded border border-black transition"
-    >
-        Adicionar
-    </button>
+    <div class="flex gap-4">
 
-    <div 
-        id="lista"
-        class="flex flex-col gap-2 mt-4 w-64"
-    >
+        <button
+            id="botao"
+            class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-6 rounded border border-black transition"
+        >
+            Adicionar
+        </button>
+
+        <button
+            id="botaoApagar"
+            class="bg-red-500 hover:bg-red-600 text-white py-2 px-6 rounded border border-black transition"
+        >
+            Apagar último
+        </button>
+
     </div>
 
+    <table class="border-collapse border border-gray-300 dark:border-gray-700 mt-6 w-96 text-center">
+
+        <thead class="bg-gray-100 dark:bg-gray-800 text-black dark:text-white">
+            <tr>
+                <th class="border border-gray-300 dark:border-gray-700 p-2">Código</th>
+                <th class="border border-gray-300 dark:border-gray-700 p-2">Produto</th>
+                <th class="border border-gray-300 dark:border-gray-700 p-2">Quantidade</th>
+            </tr>
+        </thead>
+    
+        <tbody id="lista" class="bg-white dark:bg-gray-800 text-black dark:text-white">
+        </tbody>
+    
+    </table>
 </body>
+
 </html>
