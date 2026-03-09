@@ -1,15 +1,16 @@
 'use strict'
 
 const botao = document.getElementById('botao')
+const botaoApagar = document.getElementById('botaoApagar')
+const lista = document.getElementById('lista')
+
 
 botao.addEventListener('click', function () {
 
-    const lista = document.getElementById('lista')
     const codigo = document.getElementById('codigo')
     const produto = document.getElementById('produto')
     const quantidade = document.getElementById('quantidade')
 
-    // 🔎 Validação
     if (
         codigo.value.trim() === '' ||
         produto.value.trim() === '' ||
@@ -19,23 +20,27 @@ botao.addEventListener('click', function () {
         return
     }
 
-    // 🗑 Remove produto anterior
-    lista.innerHTML = ''
+    const linha = document.createElement('tr')
 
-    // 📦 Criando elemento
-    const item = document.createElement('div')
-    item.classList.add('border', 'p-3', 'rounded', 'bg-gray-100')
-
-    item.innerHTML = `
-        <p><strong>Código:</strong> ${codigo.value}</p>
-        <p><strong>Produto:</strong> ${produto.value}</p>
-        <p><strong>Quantidade:</strong> ${quantidade.value}</p>
+    linha.innerHTML = `
+        <td class="border p-2">${codigo.value}</td>
+        <td class="border p-2">${produto.value}</td>
+        <td class="border p-2">${quantidade.value}</td>
     `
 
-    lista.appendChild(item)
+    lista.appendChild(linha)
 
-    // 🔄 Limpar campos
     codigo.value = ''
     produto.value = ''
     quantidade.value = ''
+})
+
+botaoApagar.addEventListener('click', function () {
+
+    if (lista.lastElementChild) {
+        lista.lastElementChild.remove()
+    } else {
+        alert('Não há produtos para apagar')
+    }
+
 })
